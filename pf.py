@@ -174,4 +174,32 @@ def gameboard_pc(game_board, l1, l2):
                 game_board, bd=5, command=get_t, height=4, width=8)
             button[i][j].grid(row=m, column=n)
     game_board.mainloop()
+  
+# Initialize the game board to play with system
+def withpc(game_board):
+    game_board.destroy()
+    game_board = Tk()
+    game_board.title("Tic Tac Toe")
+    l1 = Button(game_board, text="Player : X", width=10)
+    l1.grid(row=1, column=1)
+    l2 = Button(game_board, text = "Computer : O",
+                width = 10, state = DISABLED)
+     
+    l2.grid(row = 2, column = 1)
+    gameboard_pc(game_board, l1, l2)
+ 
+# Initialize the game board to play with another player
+def withplayer(game_board):
+    game_board.destroy()
+    game_board = Tk()
+    game_board.title("Tic Tac Toe")
+    l1 = Button(game_board, text = "Player 1 : Mifra", width = 10)
+     
+    l1.grid(row = 1, column = 1)
+    l2 = Button(game_board, text = "Player 2 : Dua",
+                width = 10, state = DISABLED)
+     
+    l2.grid(row = 2, column = 1)
+    gameboard_pl(game_board, l1, l2)
+
  
