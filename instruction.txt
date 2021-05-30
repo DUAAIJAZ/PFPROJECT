@@ -1,0 +1,5 @@
+Instructions:
+1st=> select the mode
+Single player OR Multi player
+2nd=>Tick anywhere in the empty box
+3rd=>Donot tick on the box that is already fill
