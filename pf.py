@@ -201,5 +201,52 @@ def withplayer(game_board):
      
     l2.grid(row = 2, column = 1)
     gameboard_pl(game_board, l1, l2)
+# main function
+
+
+def play():
+    menu = Tk()
+    menu.geometry("250x250")
+    menu.title("Tic Tac Toe")
+
+    wpc = partial(withpc, menu)
+    wpl = partial(withplayer, menu)
+
+     
+    head = Button(menu, text = "Welcome to tic-tac-toe",
+                  activeforeground = 'yellow',
+                  activebackground = "green", bg = "yellow",
+                  fg = "black", width = 500, font = 'Papyrus', bd = 5)
+     
+    B1 = Button(menu, text = "Single Player", command = wpc,
+                activeforeground = 'yellow',
+                activebackground = "green", bg = "yellow",
+                fg = "black", width = 500, font = 'Garamond', bd = 5)
+     
+    B2 = Button(menu, text = "Multi Player", command = wpl, activeforeground = 'yellow',
+                activebackground = "green", bg = "yellow", fg = "black",
+                width = 500, font = 'Garamond', bd = 5)
+     
+    B3 = Button(menu, text = "Exit", command = menu.destroy, activeforeground = 'red',
+                activebackground = "black", bg = "red", fg = "black",
+                width = 500, font = 'Garamond', bd = 5)
+    B4 = Button(menu, text = content, 
+                  activeforeground = 'yellow',
+                  activebackground = "green", bg = "yellow",
+                  fg = "black", width = 500, font = 'Papyrus', bd = 5)
+
+    head.pack(side = 'top')
+    B1.pack(side = 'top')
+    B2.pack(side = 'top')
+    B3.pack(side = 'top')
+    B4.pack(side = 'top')
+
+    menu.mainloop()
+ 
+# Call main function
+if __name__ == '__main__':
+
+    play()
+    
 
  
