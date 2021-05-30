@@ -158,3 +158,20 @@ def get_text_pc(i, j, gb, l1, l2):
             move = pc()
             button[move[0]][move[1]].config(state=DISABLED)
             get_text_pc(move[0], move[1], gb, l1, l2)
+# Create the GUI of game board for play along with system
+def gameboard_pc(game_board, l1, l2):
+    global button
+    button = []
+    for i in range(3):
+        m = 3+i
+        button.append(i)
+        button[i] = []
+        for j in range(3):
+            n = j
+            button[i].append(j)
+            get_t = partial(get_text_pc, i, j, game_board, l1, l2)
+            button[i][j] = Button(
+                game_board, bd=5, command=get_t, height=4, width=8)
+            button[i][j].grid(row=m, column=n)
+    game_board.mainloop()
+ 
